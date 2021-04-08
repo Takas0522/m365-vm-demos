@@ -13,7 +13,11 @@ export class ApiAccess {
       }
     });
     const json = await data.json();
-    console.log(json)
+    console.log(json);
+    const el = document.getElementById('graph-data');
+    if (el) {
+      el.innerText = JSON.stringify(json);
+    }
   }
 
   async getOriginalApiData() {
@@ -26,5 +30,9 @@ export class ApiAccess {
     });
     const json = await data.json();
     console.log(json)
+    const el = document.getElementById('custom-data');
+    if (el) {
+      el.innerText = JSON.stringify(json);
+    }
   }
 }
