@@ -18,7 +18,9 @@ namespace SimpleFunctions
             {
                 configuration.GetSection("AzureAd").Bind(settings);
             });
+            builder.Services.AddHttpClient();
             builder.Services.AddSingleton<IAuthClient, AuthClient>();
+            builder.Services.AddSingleton<IWebApiRequest, WebApiRequest>();
         }
     }
 }
