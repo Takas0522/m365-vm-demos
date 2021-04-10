@@ -21,7 +21,7 @@ export class ApiAccess {
   }
 
   async getOriginalApiData() {
-    const token = await this.authClient.aquireToken(['api://b8aa8738-c371-47f1-a999-561052cf5ddd/access']);
+    const token = await this.authClient.aquireToken(['api://622f3d4b-32f5-4c95-a5e0-fbfd431576f7/access']);
     console.log(token)
     const data = await fetch('https://localhost:44310/weatherforecast', {
       headers: {

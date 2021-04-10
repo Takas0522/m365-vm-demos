@@ -1,5 +1,5 @@
 {
-  "name": "simple-web-application",
+  "name": "front",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,11 +8,11 @@
     "build": "webpack"
   },
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
   "devDependencies": {
     "ts-loader": "^8.1.0",
-    "typescript": "^4.2.3",
-    "webpack": "^5.30.0",
+    "typescript": "^4.2.4",
+    "webpack": "^5.31.2",
     "webpack-cli": "^4.6.0"
   },
   "dependencies": {
