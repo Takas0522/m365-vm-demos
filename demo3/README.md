@@ -1,5 +1,5 @@
 # 構成
-![](./_images/2021-04-11-10-50-32.png)
+![](./_images/2021-04-11-14-28-00.png)
 # Azure AD アプリケーション設定
 ## AD App1
 ### API Permisssion
