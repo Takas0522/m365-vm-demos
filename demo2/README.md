@@ -5,6 +5,7 @@
 ### API Permisssion
 ![](./_images/2021-04-10-23-27-24.png)
 ### Secret
+![](./_images/2021-04-11-10-39-00.png)
 ## AD App2
 ### App Roles
 ![](./_images/2021-04-10-23-28-33.png)
