@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <!--公式のDocにある1.0.18ライブラリは存在しないようなので注意-->
+    <script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.17/js/adal.min.js"></script>
+    <script>
+        console.log('Adal Redirect Page Access')
+        window.config = {
+            clientId: 'g075edef-0efa-453b-997b-de1337c29185'
+        };
+        var authContext = new AuthenticationContext(config);
+        authContext.handleWindowCallback();
+    </script>
+  </head>
+</html>
