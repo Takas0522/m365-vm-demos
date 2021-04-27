@@ -9,6 +9,13 @@ using WebApi.Util;
 
 namespace WebApi.Controllers
 {
+    public class ResultModels
+    {
+        public string Message { get; set; }
+        public string Token { get; set; }
+    }
+
+
     [ApiController]
     [Route("[controller]")]
     [Authorize]
@@ -23,10 +30,10 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<string> Get()
+        public async Task<ResultModels> Get()
         {
             var apiToken = await _tokenProvider.GetTokenOnBeHalfOfFlowAsync(new List<string> { "api://5d952390-207d-468a-b727-fc9bf9ac3341/access" });
-            return apiToken;
+            return new ResultModels { Message = "Return WebAPI Result", Token = apiToken };
         }
     }
 }

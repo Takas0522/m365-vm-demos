@@ -13,6 +13,7 @@ export class ApiAccess {
         'Authorization': `Bearer ${token}`
       }
     });
+    console.log(data)
     const json = await data.json();
     console.log(json)
     const el = document.getElementById('custom-data');
