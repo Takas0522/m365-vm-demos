@@ -12,7 +12,7 @@ export class Auth {
       this.account = res.account;
       return;
     }
-    this.client.loginRedirect({ scopes: ['user.read'] });
+    this.client.loginRedirect({ scopes: ['https://takassampleb2c.onmicrosoft.com/b9982235-a2b5-4349-8e11-8196f60336ce/access'] });
   }
 
   async aquireToken(scopes: string[]): Promise<string> {

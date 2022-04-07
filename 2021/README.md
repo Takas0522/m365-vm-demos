@@ -1,6 +1,8 @@
 demo5以外は基本的に同じことをすれば動作します。
 
-Azure AD App V2くぉ用意しておく必要があります。
+demo5はdemo5のREADMEを参照してください。
+
+Azure AD App V2を用意しておく必要があります。
 
 1. `webapi`ディレクトリのソリューションファイルの中にある`appsettings.json`を書き換え。
 
@@ -40,3 +42,4 @@ npm run build
 ```
 
 6. `front`ディレクトリで[LiveServer](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)などを使用し、`localhost:5500`にアクセスを行う
+
