@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://alcdn.msauth.net/lib/1.4.16/js/msal.min.js"></script>
+    <script type="text/javascript" src="/environments/environments.msal.js"></script>
+  </head>
+  <body>
+    <button id="login">LOGIN</button>
+    <button id="gat">GET ACCESS TOKEN</button>
+
+    <script type="text/javascript">
+      // msalConfig
+      // const loggerCallback = (logLevel, message, containsPii) => {
+      //   console.log({logLevel, message, containsPii})
+      // }
+      // const demo2msalConfig = {
+      //   auth: {
+      //     clientId: 'xxxx',
+      //     authority: 'https://login.microsoftonline.com/xxxxx/'
+      //   },
+      //   system: {
+      //     logger: new Msal.Logger(
+      //       loggerCallback,
+      //       {
+      //         level: 1, // Verbose
+      //         piiLoggingEnabled: false,
+      //         correlationId: '1111'
+      //       }
+      //     )
+      //   }
+      // }
+
+      const msalClient = new Msal.UserAgentApplication(demo2msalConfig);
+      msalClient.handleRedirectCallback((error, res) => {
+        console.error(error);
+        console.log(res);
+      });
+
+      // LOGIN処理
+      const login = () => {
+        // Redirectでログインを行いたい場合
+        msalClient.loginRedirect();
+        return;
+        // ログイン画面をPopupで表示したい場合
+        // msalClient.loginPopup().then(res => {
+        //   console.log(res)
+        // },
+        // err => {
+        //   console.error(err)
+        // });
+      }
+      const loginbutton = document.getElementById('login')
+      loginbutton.onclick = login;
+
+      // ACCESSTOKEN取得処理
+      const getAccessToken = () => {
+
+        // バックグラウンドで取得(リダイレクトやポップアップは発生しない)
+        msalClient.acquireTokenSilent({ scopes: ['user.read'] }).then(res => {
+          console.log(res)
+        },
+        err => {
+          console.error(err)
+        });
+
+        // Redirect時にアクセストークン取得
+        // msalClient.acquireTokenRedirect({ scopes: ['user.read'] })
+        // return;
+
+        // Popupでアクセストークン取得
+        // msalClient.acquireTokenPopup({ scopes: ['user.read'] }).then(res => {
+        //   console.log(res)
+        // },
+        // err => {
+        //   console.error(err)
+        // });
+      }
+
+      const getAccessTokenbutton = document.getElementById('gat')
+      getAccessTokenbutton.onclick = getAccessToken;
+
+    </script>
+  </body>
+</html>
